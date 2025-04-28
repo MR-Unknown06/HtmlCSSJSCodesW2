@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Input Example</title>
+    <link rel="stylesheet" href="hello.css">
+</head>
+<body>
+    <h1>Enter Your Name</h1>
+    <input type="text" id="nameInput" placeholder="Type your name here">
+    <br>
+    <button onclick="displayName()">Submit Name</button>
+    <div id="result"></div>
+
+    <script>
+        function displayName() {
+            const name = document.getElementById('nameInput').value;
+            const resultDiv = document.getElementById('result');
+            if (name.trim() === '') {
+                resultDiv.innerHTML = 'Please enter your name!';
+            } else {
+                resultDiv.innerHTML = `Hello, <strong>${name}</strong>`;
+                document.getElementById('nameInput').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
